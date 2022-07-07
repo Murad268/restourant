@@ -29,12 +29,12 @@ const AddOrder = () => {
    })
 
 
-  const addFood = (e, id, name, price, count) => {
-   setFoods(prev => [...prev, {id, name, price, count}])
+  const addFood = (e, id, name, price, count, oderTime) => {
+   setFoods(prev => [...prev, {id, name, price, count, oderTime}])
   
   }
    const ordering = (e) => {
-      addFood(e, random,  document.querySelector("#foodName").value.split('/')[0], document.querySelector("#foodName").value.split('/')[1], document.querySelector("#count").value)
+      addFood(e, random,  document.querySelector("#foodName").value.split('/')[0], document.querySelector("#foodName").value.split('/')[1], document.querySelector("#count").value, time)
       
      
    }
