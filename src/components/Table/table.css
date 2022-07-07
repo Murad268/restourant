@@ -1,0 +1,30 @@
+
+
+th {
+   text-align: center;
+   padding: 10px;
+   border: 1px solid #DEB887;
+   border-bottom: 1px black;
+   color: aqua;
+   font-weight: 800;
+   background-color: burlywood;
+}
+table {
+   width: 100%;
+   margin: 0 auto;
+}
+
+
+.tables {
+   padding: 80px 0 0 0;
+}
+
+footer {
+   width: 100%;
+   padding: 15px 0 15px 30px;
+   font-size: 40px;
+   font-weight: 600;
+}
+footer span {
+   margin-left: 280px;
+}

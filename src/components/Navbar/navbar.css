@@ -1,0 +1,18 @@
+nav {
+   background-color: cadetblue;
+
+}
+ul {
+   list-style: none;
+   display: flex;
+   width: 30%;
+   justify-content: space-between;
+   margin: 0 auto;
+   padding: 30px;
+}
+.navbar__item {
+   font-size: 16px;
+   font-weight: 600;
+   color: white;
+   text-decoration: none;
+}

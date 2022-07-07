@@ -1,0 +1,17 @@
+td {
+   text-align: center;
+   padding: 10px;
+   border: 1px solid rgba(55, 52, 52, 0.4);
+   font-weight: 600;
+}
+.statusEnd {
+   color: green;
+}
+.statusCanceled {
+   color: red
+}
+
+
+.endCancel {
+   color: red
+}
