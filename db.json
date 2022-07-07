@@ -1,96 +1,6 @@
 {
   "orders": [
     {
-      "id": 1,
-      "table": "k3",
-      "servant": "Murtuz",
-      "status": 1,
-      "end": "",
-      "foods": [
-        {
-          "id": 1,
-          "name": "Çörəkdə ət dönər",
-          "price": 2.5,
-          "count": 2,
-          "orderTime": "07-07-2022 15:37:53"
-        },
-        {
-          "id": 2,
-          "name": "Kartof free(balaca)",
-          "price": 5,
-          "count": 1,
-          "orderTime": "07-07-2022 15:37:53"
-        },
-        {
-          "id": 3,
-          "name": "ayran",
-          "price": 1,
-          "count": 1,
-          "orderTime": "07-07-2022 15:37:53"
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "table": "m4",
-      "servant": "Fedai",
-      "status": 1,
-      "end": "07-07-2022 15:38:53",
-      "foods": [
-        {
-          "id": 4,
-          "name": "Kartof free(böyük)",
-          "price": 10,
-          "count": 2,
-          "orderTime": "07-07-2022 15:37:53"
-        },
-        {
-          "id": 5,
-          "name": "Toyuq dönəri",
-          "price": 1.5,
-          "count": 2,
-          "orderTime": "07-07-2022 15:37:53"
-        },
-        {
-          "id": 6,
-          "name": "ayran",
-          "price": 1,
-          "count": 3,
-          "orderTime": "07-07-2022 15:37:53"
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "table": "m6",
-      "servant": "Murtuz",
-      "status": -1,
-      "end": "",
-      "foods": [
-        {
-          "id": 7,
-          "name": "Basdırma dönər",
-          "price": 4,
-          "count": 4,
-          "orderTime": "07-07-2022 15:37:53"
-        },
-        {
-          "id": 8,
-          "name": "Kartof free(balaca)",
-          "price": 5,
-          "count": 3,
-          "orderTime": "07-07-2022 15:37:53"
-        },
-        {
-          "id": 9,
-          "name": "ayran",
-          "price": 1,
-          "count": 8,
-          "orderTime": "07-07-2022 15:37:53"
-        }
-      ]
-    },
-    {
       "id": 4,
       "table": "m2",
       "servant": "Aysun",
@@ -107,117 +17,139 @@
       ]
     },
     {
-      "id": 0.6832141955453124,
-      "table": "m1",
+      "id": 0.1377001616659257,
+      "table": "k3",
       "servant": "Fedai",
-      "status": -1,
-      "orderTime": "2022-07-07T14:58:42.256Z",
-      "end": "",
-      "foods": []
-    },
-    {
-      "id": 0.7842631769459927,
-      "table": "m4",
-      "servant": "Aysun",
-      "status": -1,
-      "orderTime": "2022-07-07T14:58:49.558Z",
-      "end": "",
-      "foods": []
-    },
-    {
-      "id": 0.5536345506289111,
-      "table": "m3",
-      "servant": "Aysun",
-      "status": 0,
-      "orderTime": "2022-07-07T15:11:40.052Z",
-      "end": "",
-      "foods": []
-    },
-    {
-      "id": 0.7044522244924099,
-      "table": "m1",
-      "servant": "Fedai",
-      "status": 0,
-      "orderTime": "2022-07-07T15:14:34.090Z",
-      "end": "",
-      "foods": []
-    },
-    {
-      "id": 0.3093562229847642,
-      "table": "m4",
-      "servant": "Nailə",
-      "status": 0,
-      "orderTime": "2022-07-07T15:23:54.605Z",
-      "end": "",
+      "status": 1,
+      "orderTime": "07.07.2022, 19:58:18",
+      "end": "2022-07-07T15:58:18.000Z",
       "foods": [
         {
-          "id": 0.974114409381355,
-          "name": "kola",
-          "price": "2",
+          "id": 0.7057782227494493,
+          "name": "Çörəkdə ət dönər",
+          "price": "2.5",
           "count": "1",
-          "orderTime": "2022-07-07T15:23:56.613Z"
-        },
-        {
-          "id": 0.24677306292502754,
-          "name": "kola",
-          "price": "2",
-          "count": "1",
-          "orderTime": "2022-07-07T15:23:58.653Z"
-        },
-        {
-          "id": 0.2564010060452169,
-          "name": "kola",
-          "price": "2",
-          "count": "1",
-          "orderTime": "2022-07-07T15:23:59.750Z"
+          "oderTime": "07-07-2022 15:40:53"
         }
       ]
     },
     {
-      "id": 0.6558989146635403,
-      "table": "m2",
-      "servant": "Murtuz",
-      "status": 0,
-      "orderTime": "2022-07-07T15:27:12.906Z",
-      "end": "",
+      "id": 0.9144105244587837,
+      "table": "m1",
+      "servant": "Fedai",
+      "status": 1,
+      "orderTime": "07.07.2022, 20:14:40",
+      "end": "07-07-2022 15:40:53",
       "foods": [
         {
-          "id": 0.5470784184292763,
+          "id": 0.3288735655036319,
+          "name": "Çörəkdə ət dönər",
+          "price": "2.5",
+          "count": "1",
+          "oderTime": "07.07.2022, 20:14:40"
+        }
+      ]
+    },
+    {
+      "id": 0.3514689461092708,
+      "table": "m5",
+      "servant": "Aysun",
+      "status": -1,
+      "orderTime": "07.07.2022, 20:44:55",
+      "end": 0,
+      "foods": [
+        {
+          "id": 0.7022496405686036,
+          "name": "Çörəkdə ət dönər",
+          "price": "2.5",
+          "count": "1",
+          "oderTime": "07.07.2022, 20:45:00"
+        },
+        {
+          "id": 0.41394164868429106,
+          "name": "Kartof free(balaca)",
+          "price": "5",
+          "count": "2",
+          "oderTime": "07.07.2022, 20:45:11"
+        },
+        {
+          "id": 0.6975218440422093,
           "name": "Qutab(göyərtili)",
           "price": "0.5",
-          "count": "1",
-          "orderTime": "2022-07-07T15:27:14.983Z"
+          "count": "2",
+          "oderTime": "07.07.2022, 20:45:12"
         },
         {
-          "id": 0.6590743174619542,
-          "name": "Qutab(ətli)",
+          "id": 0.7567824250232709,
+          "name": "fanta",
           "price": "2",
-          "count": "1",
-          "orderTime": "2022-07-07T15:27:17.846Z"
-        },
-        {
-          "id": 0.47687940235592063,
-          "name": "Qutab(ətli)",
-          "price": "2",
-          "count": "1",
-          "orderTime": "2022-07-07T15:27:20.897Z"
+          "count": "2",
+          "oderTime": "07.07.2022, 20:45:16"
         }
       ]
     },
     {
-      "id": 0.09242642990100847,
-      "table": "k1",
-      "servant": "Davud",
-      "status": 0,
-      "orderTime": "2022-07-07T15:27:46.240Z",
-      "end": "",
+      "id": 0.3519519488990823,
+      "table": "m6",
+      "servant": "İsrafil",
+      "status": 1,
+      "orderTime": "07.07.2022, 20:45:29",
+      "end": "07.07.2022, 20:45:54",
       "foods": [
         {
-          "id": 0.06247155457515707,
-          "name": "Kartof free(böyük)",
-          "price": "7",
+          "id": 0.5873295977320201,
+          "name": "fanta",
+          "price": "2",
           "count": "1",
-          "orderTime": "2022-07-07T15:27:56.021Z"
+          "oderTime": "07.07.2022, 20:45:32"
+        },
+        {
+          "id": 0.20245724810642884,
+          "name": "Lahmacun",
+          "price": "5",
+          "count": "1",
+          "oderTime": "07.07.2022, 20:45:35"
+        },
+        {
+          "id": 0.506474750187422,
+          "name": "Basdırma dönər",
+          "price": "4",
+          "count": "1",
+          "oderTime": "07.07.2022, 20:45:37"
+        }
+      ]
+    },
+    {
+      "id": 0.515969743303295,
+      "table": "m1",
+      "servant": "Fedai",
+      "status": -1,
+      "orderTime": "07.07.2022, 20:45:45",
+      "end": 0,
+      "foods": [
+        {
+          "id": 0.7173197640769826,
+          "name": "Çörəkdə ət dönər",
+          "price": "2.5",
+          "count": "1",
+          "oderTime": "07.07.2022, 20:45:45"
+        }
+      ]
+    },
+    {
+      "id": 0.7780387349718998,
+      "table": "m2",
+      "servant": "Fedai",
+      "status": -1,
+      "orderTime": "07.07.2022, 21:25:44",
+      "end": 0,
+      "foods": [
+        {
+          "id": 0.6623113866344157,
+          "name": "Çörəkdə ət dönər",
+          "price": "2.5",
+          "count": "1",
+          "oderTime": "07.07.2022, 21:25:45"
         }
       ]
     }

@@ -8,9 +8,10 @@ import ResTable from '../ResTable/ResTable';
 import "./addOrder.css"
 const AddOrder = () => {
    let random = Math.random()
-   let time = new Date()
+   let time = new Date().toLocaleString()
    const [count, setCount] = useState(1)
    const [foods, setFoods] = useState([])
+
    const res = new Services()
    let navigate = useNavigate()
    const [state, setState] = useState({
@@ -24,7 +25,7 @@ const AddOrder = () => {
       servant: "Fedai",
       status: 0,
       orderTime: time,
-      end: "",
+      end: 0,
       foods: []   
    })
 
@@ -86,6 +87,7 @@ const AddOrder = () => {
    }
    const disable = order.foods.length>0?false:true
    let agreed = foods.length>0?"agree  agree__active":"agree"
+   
    return (
       <section className='order'>
          <h1 className='order__title'>Aşağıdakı siyahıdan məhsul seçiminizi edin</h1>

@@ -10,14 +10,24 @@ const Order = () => {
    
    const [state, setState] = useState()
    const [server, setServer] = useState(1)
+   const [timer, setTimer] = useState()
    useEffect(() => {
       res.getData("orders", id).then(res => setState(res))
    }, [server])
   
    const navigate = useNavigate()
    const changeData = () => {
+      
       res.changeData("orders", JSON.stringify({status: 1}), id)
-      navigate("/")
+      res.changeData("orders", JSON.stringify({end: new Date().toLocaleString()}), id)
+     
+      setTimeout(() => {
+         navigate("/")
+      }, 1000)
+  
+   
+   
+     
    }
    const cancelData = () => {
       res.changeData("orders", JSON.stringify({status: -1}), id)
@@ -32,8 +42,11 @@ const Order = () => {
       res.changeData("orders", JSON.stringify({foods: state.foods?.filter(item => item.id !== idr)}), id)
       
       setServer(prev => prev + 1)
+ 
    } 
-  
+   const endTime = () => {
+      setTimer(new Date().toLocaleString())
+   }
    return (
       <section className='order'>
          <h1 className='order_title'>Sifariş haqqında</h1>
@@ -45,8 +58,6 @@ const Order = () => {
                   <th>Miqdar</th>
                   <th>Məbləğ</th>
                   <th>Sirafiş saatı</th>
-                  <th>Gözləmə</th>
-                  <th>#</th>
                   <th>Geri</th>
                </tr>
             </thead>

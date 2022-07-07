@@ -11,7 +11,20 @@ const Table = () => {
    useEffect(() => {
       getData()
    }, [])
-  
+
+   const result = () => {
+      let res = 0;
+      for(let i = 0; i < states?.length; i++) {
+         if(states[i].status == -1) {
+            continue
+         }
+         res += states[i].foods.reduce((a, b) => {
+            return a+(b.price * b.count)
+          }, 0)
+      }
+      return res
+   }
+   console.log(result())
    return (
     <section className="tables container">
         <table>
@@ -43,14 +56,14 @@ const Table = () => {
       
       </table>
       <footer>
-         Cəmi məbləğ : <span> {states?.reduce((a, b) => {
-            return a + b.foods.reduce((a, b) => {
-               return a+(b.price * b.count)
-            }, 0)
-         }, 0)} AZN</span>
+         Cəmi məbləğ : <span> {
+            result()
+         } AZN</span>
         </footer>
     </section>
    );
 };
+
+
 
 export default Table;
