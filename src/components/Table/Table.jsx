@@ -5,6 +5,13 @@ import './table.css'
 const Table = () => {
    const res = new Services()
    const [states, setStates] = useState()
+   const [filter, setFilter] = useState("all")
+   const [options, setOptions] = useState([
+      {id: 1, name: "hamısı", value: "all"},
+      {id: 2, name: "ləğv edilmiş", value: "cancel"},
+      {id: 3, name: "bitirilmiş", value: "end"},
+      {id: 4, name: "davam edən", value: "contunio"}
+   ])
    const getData = () => {
       res.getData("orders").then(res => setStates(res))
    }
@@ -24,9 +31,41 @@ const Table = () => {
       }
       return res
    }
-   console.log(result())
+   const filtering = (filter, items) => {
+      switch(filter) {
+         case "all": 
+            return items
+         case "cancel":
+            return items.filter(item => {
+               return item.status === -1
+            })
+         case "end":
+            return items.filter(item => {
+               return item.status === 1
+            })
+         case "contunio":
+            return items.filter(item => {
+               return item.status === 0
+            })
+      }
+   }
+   const filteredArray = filtering(filter, states)
+   const changeFilter = (e) => {
+      setFilter(e.target.value)
+   }
    return (
     <section className="tables container">
+         <div className="status__filter">
+            statusa görə filterlə
+            <select onChange={changeFilter} name="" id="">
+               {
+                  options.map(option => {
+                     return <option key={option.id} value={option.value}>{option.name}</option>
+                  })
+               }
+              {/* bura mən ayrıca qovluğdan da option componentini elavə edə bilərdim. Amma bu dərəcədə kiçik hissəcik üçün bunu etməyə dəyməz MƏNCƏ */}
+            </select>
+         </div>
         <table>
         <thead>
          <tr>
@@ -40,13 +79,9 @@ const Table = () => {
             </tr>
         </thead>
         <tbody>
-            {/* {
-               states?.map(state => {
-                  return <TableItem state={state} key={state.id}/>
-               })
-            } */}
+            
              {
-               states?.sort((a, b) => {
+               filteredArray?.sort((a, b) => {
                   return -a.status - -b.status
                }).map((state, i) => {
                   return <TableItem row={i} state={state} key={state.id}/>

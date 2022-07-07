@@ -24,14 +24,13 @@ const Order = () => {
       setTimeout(() => {
          navigate("/")
       }, 1000)
-  
-   
-   
-     
    }
    const cancelData = () => {
       res.changeData("orders", JSON.stringify({status: -1}), id)
-      navigate("/")
+      setTimeout(() => {
+         navigate("/")
+      }, 1000)
+     
    }
    let disable = state?.status==1?true:state?.status==-1?true:false
    let disableEnd = state?.foods.length<1?true:false
@@ -46,6 +45,11 @@ const Order = () => {
    } 
    const endTime = () => {
       setTimer(new Date().toLocaleString())
+   }
+   const current = () => {
+      return state?.foods.reduce((a, b) => {
+         return a+(b.price * b.count)
+   }, 0)
    }
    return (
       <section className='order'>
@@ -74,18 +78,18 @@ const Order = () => {
          </table>
         <div className="footer__wrapper">
          <div className="footer__result">
+            Cəmi məbləğ :
+            <br />
                {
-                  state?.foods.reduce((a, b) => {
-                     return a+(b.price * b.count)
-               }, 0)
+                  current()
                
             } AZN
          </div>
          <button disabled={disable || disableEnd} onClick={changeData} className="btn btn-danger end__order">
-               Sifarişi sonlandır
+               Sifarişi sonlandır <i class="fa-solid fa-stop-circle"></i>
          </button>
          <button disabled={disable} onClick={cancelData} className="btn btn-primary end__order">
-               Sifarişi Ləğv elə
+               Sifarişi Ləğv elə <i class="fa fa-window-close" aria-hidden="true"></i>
          </button>
         </div>
       </section>

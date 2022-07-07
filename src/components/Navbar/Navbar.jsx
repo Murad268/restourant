@@ -8,6 +8,8 @@ const Navbar = () => {
    ])
    return (
       <nav className='navbar'>
+         <i style={{"fontSize": "80px"}} className="fas fa-pizza-slice"></i> 
+         <span style={{"fontSize": "30px", marginLeft: "30px", fontWeight: "800"}}>Murad's restourant</span>
          <ul className='navbar__list'>
             {
                navbar.map(nav => {

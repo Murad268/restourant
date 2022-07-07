@@ -166,9 +166,9 @@ const AddOrder = () => {
                      </div>
                   </div>
                   <div className="btns__wrapper">
-                     <button disabled = {disable} className="btn btn-success addBtn">Əlavə et</button>
-                     <div  onClick={ordering} className="btn btn-primary ordering">Səbətə əlavə et</div>
-                     <div  onClick={agree} className={agreed}>Razıyam</div>
+                     <button disabled = {disable} className="btn btn-success addBtn">Sifariş et <i className="fa fa-user" aria-hidden="true"></i></button>
+                     <div  onClick={ordering} className="btn btn-primary ordering">Səbətə əlavə et <i className="fa fa-shopping-cart" aria-hidden="true"></i></div>
+                     <div  onClick={agree} className={agreed}>Razıyam <i style={{color: "red"}} className="fa-solid fa-handshake"></i> </div>
                   </div>
             </form>
          </div>
