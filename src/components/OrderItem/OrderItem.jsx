@@ -1,7 +1,7 @@
 import React from 'react';
 
-const OrderItem = ({state, row}) => {
-   console.log(state)
+const OrderItem = ({state, row, disable, deleteItem}) => {
+
    return (
       <tr>
          <td>{row+1}</td>
@@ -11,7 +11,7 @@ const OrderItem = ({state, row}) => {
          <td>{state.orderTime}</td>
          <td>4</td>
          <td>6</td>
-         <td><button className="btn btn-success">geri al</button></td>
+         <td><button onClick={() => deleteItem(state.id)} disabled={disable} className="btn btn-success">geri al</button></td>
       </tr>
    );
 };

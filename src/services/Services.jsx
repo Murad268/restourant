@@ -17,6 +17,20 @@ class Services extends Component {
          })
          return await res.json()
       }
+      changeData = async (data, body, id) => {
+         const res = await fetch(`http://localhost:3000/${data}/${id}`, {
+            method: "PATCH",
+            body: body,
+            headers: {'Content-Type': 'application/json'}
+         })
+         return await res.json()
+      }
+      deleteData = async (data, id) => {
+         const res = await fetch(`http://localhost:3000/${data}/${id}`, {
+            method: "DELETE"
+         })
+         return await res.json()
+      }
 }
 
 export default Services;

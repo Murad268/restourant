@@ -1,6 +1,9 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import './tableItem.css'
-const TableItem = ({state, row}) => {
+const TableItem = ({state, row, deleteItem}) => {
+
+  
    const classNameStatus = state.status == 1?"statusEnd":state.status == -1?"statusCanceled":null
    const classNameEndTime = state.status == -1?"endCancel":null
    return (
@@ -14,7 +17,7 @@ const TableItem = ({state, row}) => {
          }, 0)} AZN</td>
          <td className={classNameStatus}>{state.status == 1?"sonlandırılıb":state.status == 0?"sonlandırılmayıb":"Ləğv edilib"}</td>
          <td className={classNameEndTime}>{state.end?state.end:"---"}</td>
-         <td><a className='btn btn-primary' href="">Bax</a></td>
+         <td><NavLink  to={`/${state.id}`} className='btn btn-primary' href="">Bax</NavLink></td>
       </tr>
    );
 };
