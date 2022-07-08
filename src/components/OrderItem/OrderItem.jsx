@@ -1,16 +1,16 @@
 import React from 'react';
 
 const OrderItem = ({state, row, disable, deleteItem}) => {
-console.log(state)
+
    return (
       <tr>
          <td>{row+1}</td>
          <td>{state.name}</td>
          <td>{state.count}</td>
          <td>{state.price}</td>
-         <td>{state.orderTime}</td>
+         <td>{new Date(state.orderTime).toLocaleTimeString()}</td>
        
-         <td><button onClick={() => deleteItem(state.id)} disabled={disable} className="btn btn-success">geri al</button></td>
+         <td><button onClick={() => deleteItem(state.id)} disabled={disable} className="btn btn-success">geri al <i className="fa fa-sign-out" aria-hidden="true"></i></button></td>
       </tr>
    );
 };

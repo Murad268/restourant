@@ -13,24 +13,11 @@ const Table = () => {
       {id: 4, name: "davam edən", value: "contunio"}
    ])
    const getData = () => {
-      res.getData("orders").then(res => setStates(res))
+      res.getData("orders").then(res => setStates(res)).catch(() => alert("səhifənin yüklənməsində müəyyən problemlər baş verdi"))
    }
    useEffect(() => {
       getData()
    }, [])
-
-   const result = () => {
-      let res = 0;
-      for(let i = 0; i < states?.length; i++) {
-         if(states[i].status == -1) {
-            continue
-         }
-         res += states[i].foods.reduce((a, b) => {
-            return a+(b.price * b.count)
-          }, 0)
-      }
-      return res
-   }
    const filtering = (filter, items) => {
       switch(filter) {
          case "all": 
@@ -53,6 +40,21 @@ const Table = () => {
    const changeFilter = (e) => {
       setFilter(e.target.value)
    }
+
+   const result = () => {
+      let res = 0;
+      for(let i = 0; i < filteredArray?.length; i++) {
+         if(filteredArray[i].status == -1) {
+            continue
+         }
+         res += states[i].foods.reduce((a, b) => {
+            return a+(b.price * b.count)
+          }, 0)
+      }
+      return res
+   }
+  
+   
    return (
     <section className="tables container">
          <div className="status__filter">
@@ -66,7 +68,9 @@ const Table = () => {
               {/* bura mən ayrıca qovluğdan da option componentini elavə edə bilərdim. Amma bu dərəcədə kiçik hissəcik üçün bunu etməyə dəyməz MƏNCƏ */}
             </select>
          </div>
-        <table>
+            {
+               filteredArray?.length>0?
+               <table>
         <thead>
          <tr>
                <th>Say</th>
@@ -75,21 +79,24 @@ const Table = () => {
                <th>Qiymət</th>
                <th>Status</th>
                <th>Bitirmə tarixi</th>
+               <th>Gözləmə</th>
                <th>Ətraflı</th>
             </tr>
         </thead>
         <tbody>
             
              {
-               filteredArray?.sort((a, b) => {
-                  return -a.status - -b.status
-               }).map((state, i) => {
-                  return <TableItem row={i} state={state} key={state.id}/>
-               })
+             
+              filteredArray?.sort((a, b) => {
+               return -a.status - -b.status
+            }).map((state, i) => {
+               return <TableItem row={i} state={state} key={state.id}/>
+            })
+            
             }
         </tbody>
       
-      </table>
+      </table>:<div className='alert__message'>Hazırda bu statusa uyğun sifariş yoxdur</div> }
       <footer>
          Cəmi məbləğ : <span> {
             result()

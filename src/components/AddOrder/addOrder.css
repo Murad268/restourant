@@ -2,7 +2,7 @@
    width: 100%;
    padding: 40px 0 0 0;
    background-color: aquamarine;
-   height: 100vh
+   min-height: 500px;
 }
 .input-groups {
    width: 100%;

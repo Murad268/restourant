@@ -30,8 +30,8 @@ const AddOrder = () => {
    })
 
 
-  const addFood = (e, id, name, price, count, oderTime) => {
-   setFoods(prev => [...prev, {id, name, price, count, oderTime}])
+  const addFood = (e, id, name, price, count, orderTime) => {
+   setFoods(prev => [...prev, {id, name, price, count, orderTime}])
   
   }
    const ordering = (e) => {
@@ -61,12 +61,12 @@ const AddOrder = () => {
    useEffect(() => {
       getDatas()
    }, [])
-
+   
    const postDatas = (e) => {
       e.preventDefault()
      
       res.postData("orders", JSON.stringify(order))
-      .then((res) =>  console.log(res))
+      .then((res) =>  alert("sifariş uğurla əlavə edilmişdir"))
       .catch(() => alert("müəyyən problemlər baş verdi xahiş edirik bir az sonra cəhd edin"))
       
       navigate('/')
@@ -143,13 +143,15 @@ const AddOrder = () => {
                      </div>
                      <table>
                         <thead>
+                           
                            <tr>
-                              <th>Məhsulun adı</th>
+                              <th><i style={{"color": "black", marginRight: "20px"}} className="fa-solid fa-store"></i>Məhsulun adı</th>
                               <th>Qiyməti</th>
                               <th>Miqdarı</th>
                            </tr>
                         </thead>
                         <tbody>
+                           
                            {
                               foods.map(food => {
                                  return <ResultBlock deleteOrderWith={deleteOrderWith} key={food.id} food={food}/>
@@ -161,7 +163,7 @@ const AddOrder = () => {
                         <label htmlFor="result">
                            Qiymət
                         </label>
-                        <div id='result'>{countRes()}</div>
+                        <div id='result'>{countRes()} AZN</div>
                      
                      </div>
                   </div>

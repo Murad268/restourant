@@ -12,7 +12,7 @@ const Order = () => {
    const [server, setServer] = useState(1)
    const [timer, setTimer] = useState()
    useEffect(() => {
-      res.getData("orders", id).then(res => setState(res))
+      res.getData("orders", id).then(res => setState(res)).catch(() => alert("səhifənin yüklənməsində müəyyən problemlər oldu"))
    }, [server])
   
    const navigate = useNavigate()
@@ -21,20 +21,20 @@ const Order = () => {
       res.changeData("orders", JSON.stringify({status: 1}), id)
       res.changeData("orders", JSON.stringify({end: new Date().toLocaleString()}), id)
      
-      setTimeout(() => {
+         alert("sifariş dayandırılmışdır")
          navigate("/")
-      }, 1000)
+    
    }
    const cancelData = () => {
       res.changeData("orders", JSON.stringify({status: -1}), id)
-      setTimeout(() => {
+         alert("sifariş ləğv edilmişdir")
          navigate("/")
-      }, 1000)
+    
      
    }
    let disable = state?.status==1?true:state?.status==-1?true:false
    let disableEnd = state?.foods.length<1?true:false
-   console.log(disableEnd)
+  
    const deleteItem = (idr) => {
       // res.deleteData(`orders`, `${id}/foods/${idr}`)
        
@@ -85,11 +85,11 @@ const Order = () => {
                
             } AZN
          </div>
-         <button disabled={disable || disableEnd} onClick={changeData} className="btn btn-danger end__order">
-               Sifarişi sonlandır <i class="fa-solid fa-stop-circle"></i>
+         <button disabled={disable || disableEnd} onClick={changeData} className="btn btn-primary end__order">
+               Sifarişi sonlandır <i className="fa-solid fa-stop-circle"></i>
          </button>
-         <button disabled={disable} onClick={cancelData} className="btn btn-primary end__order">
-               Sifarişi Ləğv elə <i class="fa fa-window-close" aria-hidden="true"></i>
+         <button disabled={disable} onClick={cancelData} className="btn btn-warning end__order">
+               Sifarişi Ləğv elə <i style={{color: "red"}} className="fa fa-window-close" aria-hidden="true"></i>
          </button>
         </div>
       </section>
